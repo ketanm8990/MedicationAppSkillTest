@@ -94,7 +94,7 @@ const styleSheet = StyleSheet.create({
         zIndex: 2,
         backgroundColor: '#fff',
         borderRadius: 10,
-        elevation: 5,
+        // elevation: 5,
         alignItems: 'center'
     },
     checkBoxView: {
@@ -115,7 +115,7 @@ const styleSheet = StyleSheet.create({
     },
     medicineFormView: {
         backgroundColor: '#fff',
-        elevation: 5,
+        // elevation: 5,
         paddingLeft: 20,
         paddingTop: 17,
         // top: -15,
@@ -217,10 +217,10 @@ const styleSheet = StyleSheet.create({
     },
     addMedicine: {
         backgroundColor: '#fff',
-        elevation: 5,
+        // elevation: 5,
         paddingTop: 19,
         marginBottom: 20,
-        marginTop: 10,
+        marginTop: 8,
         paddingBottom: 19,
         borderRadius: 10,
         marginRight: 20,
@@ -241,7 +241,7 @@ const styleSheet = StyleSheet.create({
     },
     nextBtnView: {
         backgroundColor: 'rgb(235, 32, 37)',
-        elevation: 5,
+        // elevation: 5,
         paddingTop: 19,
         marginBottom: 20,
         paddingBottom: 19,

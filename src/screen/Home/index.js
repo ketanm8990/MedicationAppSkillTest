@@ -26,6 +26,9 @@ const Home = () => {
     const [selectDosage, setSelectDosage] = useState('Mg');
     const [address, setAddress] = useState();
     const [selectDay, setSelectDay] = useState('Daily');
+    const [medicationName, setMedicationName] = useState();
+    const [medicationType, setMedicationType] = useState();    
+    const [num, setNum] = useState("2");    
 
     // dummy api call
     const dummyApiCall = () => {
@@ -71,11 +74,13 @@ const Home = () => {
                 <ScrollView bounces={false} style={styles.scrollViewStyle}>
                     <View style={styles.medicineFormView}>
                         <Text style={styles.normalText}>Medication Name</Text>
-                        <Input label="Type your Medication Here" customStyle={styles.marginBottom20} />
+                        <Input label="Type your Medication Here" customStyle={styles.marginBottom20} 
+                            value={medicationName} onChange={text => setMedicationName(text)}/>
                         <View style={styles.flexDirectionRow}>
                             <View style={styles.flexOne}>
                                 <Text style={styles.normalText}>Amount</Text>
-                                <Input label="Type…" customStyle={styles.marginBottom20} />
+                                <Input label="Type…" customStyle={styles.marginBottom20} 
+                                    value={medicationType} onChange={text => setMedicationType(text)}/>
                             </View>
                             <View style={styles.dropDownView}>
                                 <Text style={styles.marginBottom10}></Text>
@@ -102,7 +107,7 @@ const Home = () => {
                         <View style={styles.flexDirectionRow}>
                             <View style={styles.flexOne}>
                                 <Text style={styles.normalText}>Number</Text>
-                                <Input value="2" customStyle={styles.marginBottom20} />
+                                <Input customStyle={styles.marginBottom20} value={num} onChange={text => setNum(text)}/>
                             </View>
                             <View style={styles.numberViewSection}>
                                 <Text style={styles.marginBottom10}></Text>
