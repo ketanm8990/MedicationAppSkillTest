@@ -231,6 +231,13 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		7DFE8F3BD3F24876AD75F789 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +255,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				28E8D5504CD5253BEA8642C1 /* Pods */,
+				7DFE8F3BD3F24876AD75F789 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -760,7 +768,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = SkillTest_Dev;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -786,7 +794,7 @@
 				PRODUCT_NAME = SkillTest;
 				PROVISIONING_PROFILE_SPECIFIER = SkillTest_Appstore;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

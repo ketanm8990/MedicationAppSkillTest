@@ -1,4 +1,4 @@
-package com.skilltest;
+package com.test.skilltest;
 
 import com.facebook.react.ReactActivity;
 

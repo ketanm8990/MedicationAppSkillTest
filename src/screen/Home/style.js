@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 
 /*
 * home screen style
@@ -13,9 +13,8 @@ const styleSheet = StyleSheet.create({
         backgroundColor: 'rgb(29, 157, 158)',
         height: 320,
         width: '100%',
-        justifyContent:'center',
-        alignItems:'center',
-        marginBottom: 50,
+        justifyContent: 'center',
+        alignItems: 'center',
     },
     backgroundColorView: {
         backgroundColor: 'rgb(29, 157, 158)'
@@ -39,13 +38,13 @@ const styleSheet = StyleSheet.create({
         marginBottom: 20
     },
     marginBottom10: {
-        marginBottom: 12
+        marginBottom: 10
     },
-    flexDirectionRow:{
+    flexDirectionRow: {
         flexDirection: 'row'
     },
     flexOne: {
-        flex: 1 
+        flex: 1
     },
     lineImgView: {
         height: 180,
@@ -63,24 +62,28 @@ const styleSheet = StyleSheet.create({
         color: '#fff',
         lineHeight: 24,
         fontSize: 22,
-        // marginTop: -30,
-        fontFamily: 'HKGrotesk-SemiBold'
+        fontFamily: 'HKGrotesk-SemiBold',
+        top: 120,
+        position: 'absolute',
+        zIndex: 1,
     },
     subContainer: {
         flex: 1
     },
-    sperateView: {
-        top: -60,
+    separateView: {
+        top: -15,
         position: 'absolute',
         zIndex: 1,
-        height: 60,
+        height: 15,
         width: '100%',
         backgroundColor: 'rgb(231, 231, 235)',
         borderTopLeftRadius: 14,
         borderTopRightRadius: 14,
     },
     scrollViewStyle: {
-        flex: 1, marginTop: -80, zIndex: 1,
+        flex: 1,
+        marginTop: -33,
+        zIndex: 1,
     },
     checkMedicineView: {
         flexDirection: 'row',
@@ -90,23 +93,23 @@ const styleSheet = StyleSheet.create({
         paddingRight: 20,
         marginLeft: 20,
         marginRight: 20,
-        top: -88,
+        top: -43,
         zIndex: 2,
         backgroundColor: '#fff',
         borderRadius: 10,
-        // elevation: 5,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     checkBoxView: {
-        borderColor: 'gray',
-        borderWidth: 1,
-        borderRadius: 5,
         marginRight: 15,
         height: 22,
-        width: 22
+        width: 22,
+        tintColor: 'rgb(82, 82, 82)'
     },
     infoStyle: {
-        height: 16, width: 16, marginLeft: 10 
+        height: 16,
+        width: 16,
+        marginLeft: 10
     },
     checkMedicineTxt: {
         flex: 1,
@@ -115,15 +118,14 @@ const styleSheet = StyleSheet.create({
     },
     medicineFormView: {
         backgroundColor: '#fff',
-        // elevation: 5,
         paddingLeft: 20,
         paddingTop: 17,
-        // top: -15,
-        paddingBottom: 17,
+        paddingBottom: 20,
         paddingRight: 20,
         borderRadius: 10,
         marginRight: 20,
-        marginLeft: 20
+        marginLeft: 20,
+        marginBottom: 10
     },
     normalText: {
         fontSize: 15,
@@ -136,26 +138,22 @@ const styleSheet = StyleSheet.create({
     },
     dropDownView: {
         flex: 1,
-        marginLeft: 15 
+        marginLeft: 15
     },
     dayDropDownIcon: {
         height: 7,
         width: 12,
         right: 10,
-        top: 20    
+        top: 20
     },
     durationView: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginBottom: 14
+        marginBottom: 10
     },
     durationTxt: {
         fontSize: 15,
         marginBottom: 10
-    },
-    datePickerContainer: {
-        width: '100%',
-        height: 48,
     },
     selectDatePickerCommonStyle: {
         color: '#000',
@@ -172,15 +170,13 @@ const styleSheet = StyleSheet.create({
         alignItems: 'center',
         marginBottom: 10
     },
-    mgDropDown: {
-        height: 7,
-        width: 12,
-        right: 10,
-        top: 20
-    },
     numberViewSection: {
         flex: 1,
-        marginLeft: 15 
+        marginLeft: 15
+    },
+    datePickerContainer: {
+        width: '100%',
+        height: 44,
     },
     datePickerMainView: {
         flexDirection: 'row',
@@ -204,23 +200,27 @@ const styleSheet = StyleSheet.create({
         height: 7,
         width: 12,
         right: 25,
-        top: 17
+        top: 20
     },
     addInfo: {
         fontSize: 15,
         fontFamily: 'HKGrotesk-Medium'
     },
-    addressStyle: {
+    addressContainerStyle: {
         height: 96,
-        paddingTop: 10,
-        textAlignVertical: 'top' 
+        alignItems: 'flex-start',
+        justifyContent: 'flex-start',
+        paddingTop: 15,
+    },
+    addressStyle: {
+        height: 65,
+        paddingTop: 0,
+        textAlignVertical: 'top'
     },
     addMedicine: {
         backgroundColor: '#fff',
-        // elevation: 5,
         paddingTop: 19,
         marginBottom: 20,
-        marginTop: 8,
         paddingBottom: 19,
         borderRadius: 10,
         marginRight: 20,
@@ -241,10 +241,9 @@ const styleSheet = StyleSheet.create({
     },
     nextBtnView: {
         backgroundColor: 'rgb(235, 32, 37)',
-        // elevation: 5,
-        paddingTop: 19,
+        paddingTop: 15,
         marginBottom: 20,
-        paddingBottom: 19,
+        paddingBottom: 14,
         borderRadius: 10,
         marginRight: 20,
         marginLeft: 20,
@@ -257,27 +256,30 @@ const styleSheet = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'HKGrotesk-Bold'
     },
-    inputAndroid: {
-        fontSize: 15,
-        fontFamily: 'HKGrotesk-Medium',
-        backgroundColor: 'rgb(245, 245, 247)',
-        height: 48,
-        borderWidth: 0,
-        borderRadius: 10,
-        padding: 15,
-        color: 'black',
+    stickySection: {
+        flexDirection: 'row',
+        height: Platform.OS == 'ios' ? 85 : 45,
+        width: '100%',
+        backgroundColor: "rgb(29, 157, 158)",
     },
-    inputIOS: {
-        fontSize: 15,
-        color: 'black',
-        fontFamily: 'HKGrotesk-Medium',
-        backgroundColor: 'rgb(245, 245, 247)',
-        height: 48,
-        borderWidth: 0,
-        paddingLeft: 15,
-        paddingRight: 15,
-        paddingTop: 5,
-        borderRadius: 10,
+    stickySectionText: {
+        color: 'white',
+        fontSize: 20,
+        margin: 10,
+    },
+    stickyBack: {
+        height: 21,
+        marginTop: Platform.OS == 'ios' ? 50 : 10,
+        marginLeft: 20,
+        width: 12
+    },
+    stickyTitle: {
+        flex:1,
+        marginTop: Platform.OS == 'ios' ? 50 : 10,
+        color: '#fff',
+        textAlign: 'center',
+        fontSize: 18,
+        marginRight: 30
     }
 });
 
