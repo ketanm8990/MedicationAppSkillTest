@@ -10,7 +10,6 @@ import {
     Keyboard,
     Platform,
     KeyboardAvoidingView,
-
 } from 'react-native';
 import Input from '../../component/InputWithIcon';
 import styles from './style';
@@ -226,17 +225,6 @@ const Home = () => {
                                         value={selectedDate} />
                                     <Image style={styles.dateArrow} source={require('../../image/arrowDown.png')} />
                                 </TouchableOpacity>
-                                {/* {
-                                    datePickerVisible &&
-                                    <Dates
-                                        onDatesChange={onDatesChange}
-                                        isDateBlocked={isDateBlocked}
-                                        startDate={startDate}
-                                        endDate={endDate}
-                                        focusedInput={focus}
-                                        range
-                                    />
-                                } */}
                                 <View style={[styles.moreInfoView, { marginTop: datePickerVisible ? 10 : 0 }]}>
                                     <Text style={styles.addInfo}>Additional Information</Text>
                                     <Image style={styles.infoStyle} source={require('../../image/info.png')} />
@@ -266,11 +254,11 @@ const Home = () => {
                     {
                         datePickerVisible &&
                         <Modal
-                            style={{ backgroundColor: 'rgba(0,0,0,0.3)', margin: 0, flex: 1, justifyContent: 'flex-end' }}
+                            style={styles.modelContainer}
                             visible={datePickerVisible}
                         >
-                            <View style={{ justifyContent: 'flex-end', backgroundColor: 'white', padding: 10 }}>
-                                <View style={{ justifyContent: 'space-between', flexDirection:'row', marginLeft: 5, marginRight: 5 }}>
+                            <View style={styles.modelSubContainer}>
+                                <View style={styles.modelCloseView}>
                                     <TouchableOpacity onPress={() => setDatePickerVisible(!datePickerVisible)}>
                                         <Text>Cancel</Text>
                                     </TouchableOpacity>

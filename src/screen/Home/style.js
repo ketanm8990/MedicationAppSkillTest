@@ -280,7 +280,24 @@ const styleSheet = StyleSheet.create({
         textAlign: 'center',
         fontSize: 18,
         marginRight: 30
-    }
+    },
+    modelContainer: {
+        backgroundColor: 'rgba(0,0,0,0.3)',
+        margin: 0,
+        flex: 1,
+        justifyContent: 'flex-end'
+    },
+    modelSubContainer: {
+        justifyContent: 'flex-end',
+        backgroundColor: 'white',
+        padding: 10 
+    },
+    modelCloseView: {
+        justifyContent: 'space-between',
+        flexDirection:'row',
+        marginLeft: 5,
+        marginRight: 5 
+    },
 });
 
 export default styleSheet;
