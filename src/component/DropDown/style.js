@@ -13,6 +13,7 @@ export default StyleSheet.create({
         borderWidth: 0,
         borderRadius: 10,
         padding: 15,
+        paddingLeft: 18,
         color: 'black',
         overflow: 'hidden',
         borderTopLeftRadius: 10, borderTopRightRadius: 10,
@@ -33,7 +34,7 @@ export default StyleSheet.create({
     mgDropDown: {
         height: 7,
         width: 12,
-        right: 10,
+        right: 18,
         top: 20
     },
 });

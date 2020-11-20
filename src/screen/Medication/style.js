@@ -1,7 +1,7 @@
 import { StyleSheet, Platform } from 'react-native'
 
 /*
-* home screen style
+* Medication screen style
 */
 
 const styleSheet = StyleSheet.create({
@@ -14,7 +14,7 @@ const styleSheet = StyleSheet.create({
         height: 320,
         width: '100%',
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'center'
     },
     backgroundColorView: {
         backgroundColor: 'rgb(29, 157, 158)'
@@ -65,9 +65,9 @@ const styleSheet = StyleSheet.create({
         textAlign: 'center',
         color: '#fff',
         lineHeight: 24,
-        fontSize: 22,
-        fontFamily: 'HKGrotesk-SemiBold',
-        top: 120,
+        fontSize: 18,
+        fontFamily: 'HKGrotesk-Bold',
+        top: 115,
         position: 'absolute',
         zIndex: 1,
     },
@@ -86,29 +86,29 @@ const styleSheet = StyleSheet.create({
     },
     scrollViewStyle: {
         flex: 1,
-        marginTop: -33,
-        zIndex: 1,
     },
     checkMedicineView: {
         flexDirection: 'row',
         paddingLeft: 20,
-        paddingTop: 17,
-        paddingBottom: 17,
+        paddingTop: 19,
+        paddingBottom: 19,
         paddingRight: 20,
         marginLeft: 20,
         marginRight: 20,
-        top: -43,
+        // top: -43,
+        marginTop: -43,
         zIndex: 2,
         backgroundColor: '#fff',
         borderRadius: 10,
+        marginBottom: 10,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     checkBoxView: {
         marginRight: 15,
         height: 22,
         width: 22,
-        tintColor: 'rgb(82, 82, 82)'
+        tintColor: 'red'
     },
     infoStyle: {
         height: 16,
@@ -136,90 +136,13 @@ const styleSheet = StyleSheet.create({
         marginBottom: 10,
         fontFamily: 'HKGrotesk-Medium'
     },
-    amountTxt: {
-        fontSize: 15,
-        marginBottom: 10
-    },
     dropDownView: {
         flex: 1,
         marginLeft: 15
     },
-    dayDropDownIcon: {
-        height: 7,
-        width: 12,
-        right: 10,
-        top: 20
-    },
-    durationView: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 10
-    },
-    durationTxt: {
-        fontSize: 15,
-        marginBottom: 10
-    },
-    selectDatePickerCommonStyle: {
-        color: '#000',
-        fontFamily: 'HKGrotesk-Medium',
-        fontSize: 15
-    },
-    datePickerCommonStyle: {
-        color: 'rgba(34, 34, 34, 0.3)',
-        fontFamily: 'HKGrotesk-Medium',
-        fontSize: 15
-    },
-    moreInfoView: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginBottom: 10
-    },
     numberViewSection: {
         flex: 1,
         marginLeft: 15
-    },
-    datePickerContainer: {
-        width: '100%',
-        height: 44,
-    },
-    datePickerMainView: {
-        flexDirection: 'row',
-        height: 48,
-        marginBottom: 20
-    },
-    datePickerView: {
-        fontSize: 15,
-        alignItems: "flex-start",
-        color: '#000',
-        fontFamily: 'HKGrotesk-Medium',
-        backgroundColor: 'rgb(245, 245, 247)',
-        width: '100%',
-        height: 48,
-        borderWidth: 0,
-        borderRadius: 10,
-        paddingRight: 15,
-        paddingLeft: 15,
-    },
-    dateArrow: {
-        height: 7,
-        width: 12,
-        right: 25,
-        top: 20
-    },
-    addInfo: {
-        fontSize: 15,
-        fontFamily: 'HKGrotesk-Medium'
-    },
-    addressContainerStyle: {
-        height: 96,
-        alignItems: 'flex-start',
-        justifyContent: 'flex-start',
-        paddingTop: 15,
-    },
-    addressStyle: {
-        height: 65,
-        paddingTop: 0,
-        textAlignVertical: 'top'
     },
     addMedicine: {
         backgroundColor: '#fff',
@@ -260,23 +183,10 @@ const styleSheet = StyleSheet.create({
         fontSize: 16,
         fontFamily: 'HKGrotesk-Bold'
     },
-    modelContainer: {
-        backgroundColor: 'rgba(0,0,0,0.3)',
-        margin: 0,
-        flex: 1,
-        justifyContent: 'flex-end'
-    },
-    modelSubContainer: {
-        justifyContent: 'flex-end',
-        backgroundColor: 'white',
-        padding: 10 
-    },
-    modelCloseView: {
-        justifyContent: 'space-between',
-        flexDirection:'row',
-        marginLeft: 5,
-        marginRight: 5 
-    },
+    removeIcon: {
+        height: 18,
+        width: 18
+    }
 });
 
 export default styleSheet;

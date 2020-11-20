@@ -16,16 +16,18 @@ import styles from './style';
 import DropDown from '../../component/DropDown';
 import moment from "moment";
 import Dates from 'react-native-dates';
-import ParallaxScrollView from 'react-native-parallax-scroll-view';
+import ParallaxScrollView from '../../component/ParallaxScrollView';
 import Modal from 'react-native-modal';
+import StickyHeader from '../../component/StickyHeader';
+import { isIphoneX } from 'react-native-iphone-x-helper';
 
 /*========================================================
 * function Name: Home screen design
 * function Purpose: using medication screen design and dummy api call.
-* function Description: homw screen using input box, datepicker, select drop down picker and other component and dummy api call.
+* function Description: home screen using input box, datepicker, select drop down picker and other component and dummy api call.
 *=====================================================*/
 
-const Home = () => {
+const Home = (props) => {
 
     // references
     const refMedicationName = useRef(null);
@@ -46,7 +48,7 @@ const Home = () => {
     const [focus, setFocus] = useState('startDate');
     const [datePickerVisible, setDatePickerVisible] = useState(false);
     const [checkBoxVisible, setCheckBoxVisible] = useState(false);
-    
+
     // dummy api call
     const dummyApiCall = () => {
         setLoading(true)
@@ -82,11 +84,11 @@ const Home = () => {
     const onConfirmDateBtn = () => {
         if (startDate != undefined && endDate != undefined) {
             setDatePickerVisible(false)
-        } else if(startDate ==  undefined && endDate == null) {
+        } else if (startDate == undefined && endDate == null) {
             alert('Please select start date and end date.')
-        } else if(startDate ==  undefined && startDate == null) {
+        } else if (startDate == undefined && startDate == null) {
             alert('Please select start date.')
-        } else if(endDate == undefined && endDate == null) {
+        } else if (endDate == undefined && endDate == null) {
             alert('Please select end date.')
         }
     }
@@ -104,16 +106,15 @@ const Home = () => {
     return (
         <View style={styles.container}>
             <ParallaxScrollView
-                backgroundColor="white"
-                contentBackgroundColor="rgb(231, 231, 235)"
-                stickyHeaderHeight={Platform.OS == 'ios' ? 85 : 45}
+                showsHorizontalScrollIndicator={false}
+                showsVerticalScrollIndicator={false} isForegroundTouchable={true}
                 parallaxHeaderHeight={320}
+                backgroundColor="white"
+                isForegroundTouchable={true}
+                contentBackgroundColor="rgb(231, 231, 235)"
+                stickyHeaderHeight={Platform.OS === 'ios' ? isIphoneX() ? 90 : 75 : 50}
                 renderStickyHeader={() => (
-                    <View key="sticky-header" style={styles.stickySection}>
-                        <SafeAreaView style={styles.backgroundColorView} />
-                        <Image style={styles.stickyBack} source={require('../../image/back.png')} />
-                        <Text style={styles.stickyTitle}>Add Medication</Text>
-                    </View>
+                    <StickyHeader title="Add Medication" onPress={() => props.navigation.goBack()} />
                 )}
                 renderForeground={() => (
                     <View>
@@ -122,7 +123,9 @@ const Home = () => {
                         </View>
                         <SafeAreaView style={styles.backgroundColorView} />
                         <View style={styles.backgroundTopView}>
-                            <Image style={styles.backIconView} source={require('../../image/back.png')} />
+                            <TouchableOpacity style={styles.backIconView} onPress={() => props.navigation.goBack()}>
+                                <Image style={styles.backIconStyle} source={require('../../image/back.png')} />
+                            </TouchableOpacity>
                             <Text style={styles.medicineTxt}>Do you take any Medications?</Text>
                         </View>
                     </View>
@@ -132,12 +135,10 @@ const Home = () => {
                 >
                     <View style={styles.subContainer}>
                         <View style={styles.separateView} />
-                        <View style={styles.checkMedicineView}>
-                            <TouchableOpacity onPress={() => setCheckBoxVisible(!checkBoxVisible)} activeOpacity={1}>
-                                <Image style={styles.checkBoxView} source={checkBoxVisible ? require('../../image/check.png') : require('../../image/uncheck.png')} />
-                            </TouchableOpacity>                            
+                        <TouchableOpacity style={styles.checkMedicineView} onPress={() => setCheckBoxVisible(!checkBoxVisible)} activeOpacity={1}>
+                            <Image style={styles.checkBoxView} source={checkBoxVisible ? require('../../image/check.png') : require('../../image/uncheck.png')} />
                             <Text style={styles.checkMedicineTxt}>No, I don’t take any medications</Text>
-                        </View>
+                        </TouchableOpacity>
                         <View style={styles.scrollViewStyle}>
                             <View style={styles.medicineFormView}>
                                 <Text style={styles.normalText}>Medication Name</Text>
